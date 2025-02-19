@@ -5,22 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>alpiansahere</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
     
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #F8F3D9;
+            background: linear-gradient(-45deg, #c7c09b, #c9c3a6, #B9B28A, #504B38);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
             text-align: center;
             color: #504B38;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .profile {
-            margin-top: 50px;
+            position: relative;
         }
         .profile img {
             height: 120px;
             border-radius: 50%;
             border: 2px solid #504B38;
+            cursor: pointer;
+        }
+        .message {
+            position: absolute;
+            top: -40px;
+            left: 80%;
+            transform: translateX(-50%);
+            background: rgba(235, 229, 194, 0.9);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .message1 {
+            position: absolute;
+            top: -10px;
+            left: 70%;
+            transform: translateX(-50%);
+            background: rgba(235, 229, 194, 0.9);
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
         .name {
             font-size: 24px;
@@ -35,30 +75,38 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #EBE5C2;
+            background: rgba(235, 229, 194, 0.9);
             padding: 12px;
             margin: 10px auto;
-            width: 80%;
+            width: 90%;
             max-width: 300px;
             border-radius: 25px;
             text-decoration: none;
             color: #504B38;
             font-weight: bold;
             transition: 0.3s;
+            text-align: center;
         }
         .links a:hover {
-            background: #B9B28A;
+            background: rgba(185, 178, 138, 0.9);
+            width: 100% ;
         }
         .links a i {
-            margin-right: 1%;
+            text-align: center;
             width: 50px;
             color: #504B38;
         }
+        @keyframes fadeMessage {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
     </style>
-  
 </head>
 <body>
     <div class="profile">
+        
+        <div class="message" id="autoMessage">Hai!</div>
+       
         <img src="icon.jpeg" alt="Profile Picture">
         <div class="name">ALPIANSAHERE</div>
         <div class="bio">let's see!</div>
@@ -67,8 +115,16 @@
         <a href="https://alpiansahere.github.io/profile-minecraft" target="_blank"><i class="fas fa-gamepad"></i> Minecraft Profile</a>
         <a href="https://alpiansahere.github.io/kanjihotel" target="_blank"><i class="fas fa-book"></i> Test Kanji</a>
         <a href="https://www.instagram.com/whos.r13/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://patorjk.com/misc/scrollingtext/timewaster.php?text=I+LOVE+U...&autoscroll=ON&duration=25" target="_blank"><i class="fas fa-question-circle"></i> nothing</a>
+        <a href="https://patorjk.com/misc/scrollingtext/timewaster.php?text=I+Love+U+%E2%9D%A4&au" target="_blank"><i class="fas fa-question-circle"></i> nothing</a>
     </div>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script>
+        function showMessage() {
+            const message = document.getElementById("autoMessage");
+            message.style.opacity = "1";
+            setTimeout(() => { message.style.opacity = "0"; }, 2000);
+        }
+        setInterval(showMessage, 4000);
+
+    </script>
 </body>
 </html>
