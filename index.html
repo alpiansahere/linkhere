@@ -30,7 +30,11 @@
         }
 
         .profile {
+            margin-bottom: 10px;
             position: relative;
+        }
+        .links {
+            margin-bottom: 10px;
         }
         .profile img {
             height: 120px;
@@ -50,18 +54,6 @@
             opacity: 0;
             transition: opacity 0.5s ease;
         }
-        .message1 {
-            position: absolute;
-            top: -10px;
-            left: 70%;
-            transform: translateX(-50%);
-            background: rgba(235, 229, 194, 0.9);
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
         .name {
             font-size: 24px;
             font-weight: bold;
@@ -71,25 +63,29 @@
             font-size: 16px;
             margin-bottom: 20px;
         }
-        .links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(235, 229, 194, 0.9);
-            padding: 12px;
-            margin: 10px auto;
-            width: 90%;
-            max-width: 300px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #504B38;
-            font-weight: bold;
-            transition: 0.3s;
-            text-align: center;
-        }
+        .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links a {
+    background: rgba(235, 229, 194, 0.9);
+    padding: 12px;
+    margin: 10px ;
+    width: 120%;
+    max-width: 300px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #504B38;
+    font-weight: bold;
+    transition: 0.3s;
+    text-align: center;
+}
+
         .links a:hover {
             background: rgba(185, 178, 138, 0.9);
-            width: 100% ;
+            width: 125% ;
         }
         .links a i {
             text-align: center;
@@ -105,9 +101,7 @@
 </head>
 <body>
     <div class="profile">
-        
         <div class="message" id="autoMessage">Hai!</div>
-       
         <img src="icon.jpeg" alt="Profile Picture">
         <div class="name">ALPIANSAHERE</div>
         <div class="bio">let's see!</div>
